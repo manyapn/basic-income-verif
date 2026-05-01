@@ -1,0 +1,89 @@
+:root {
+  color-scheme: light;
+  --app-bg: #f4f6f8;
+  --app-border: #d9e0e7;
+  --app-ink: #17212b;
+}
+
+body {
+  background: var(--app-bg);
+  color: var(--app-ink);
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.app-header,
+.app-card {
+  max-width: 760px;
+}
+
+.app-header .lead {
+  max-width: 680px;
+  font-size: 1.05rem;
+}
+
+.app-card {
+  border: 1px solid var(--app-border);
+  border-radius: 0.5rem;
+}
+
+.app-threshold {
+  align-self: flex-start;
+  font-size: 0.85rem;
+  padding: 0.55rem 0.75rem;
+}
+
+.result-panel {
+  border: 1px solid var(--app-border);
+  border-left-width: 0.35rem;
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  background: #ffffff;
+}
+
+.result-panel.is-verified {
+  border-left-color: var(--bs-success);
+}
+
+.result-panel.is-not-verified {
+  border-left-color: var(--bs-warning);
+}
+
+.result-panel.is-undetermined {
+  border-left-color: var(--bs-secondary);
+}
+
+.result-badge {
+  border-radius: 999px;
+  font-size: 0.95rem;
+  padding: 0.55rem 0.75rem;
+  white-space: normal;
+  text-align: center;
+}
+
+.result-details dt {
+  color: var(--bs-secondary-color);
+  font-weight: 600;
+}
+
+.result-details dd {
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 575.98px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .card-body {
+    padding: 1.25rem !important;
+  }
+
+  .btn-lg {
+    width: 100%;
+  }
+}
