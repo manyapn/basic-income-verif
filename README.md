@@ -1,6 +1,6 @@
 # Basic Income Verification Tool
 
-A lightweight, frontend-only JavaScript tool that parses a PDF income document and determines whether the identified income is above $150,000.
+A JavaScript tool that parses a PDF income document and determines whether the identified income is above $150,000.
 
 ## Run Locally
 
