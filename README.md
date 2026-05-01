@@ -29,6 +29,7 @@ The tool searches for income-specific field labels in priority order:
 - Net Income
 - Employment Income
 - Taxable Income. 
+
 When a label is found, it checks the 80 characters immediately after it for a dollar amount.
 
 Generic income, revenue, and profit terms (income tax, income limit, gross receipts, net profit, business revenue) are excluded so ambiguous financial documents fall through to Unable to Determine rather than returning a potentially wrong value.
