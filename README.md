@@ -16,13 +16,22 @@ Then open `http://localhost:8000`. An internet connection is required since Boot
 
 **PDF parsing**
 
-The app uses PDF.js to extract text from the uploaded file in the browser. It reads each page via `getTextContent()`, joins the text chunks into a single string, and passes that to the extraction logic. No server is involved.
+The app uses PDF.js to extract text from the uploaded file in the browser. It reads each page via `getTextContent()`, joins the text chunks into a single string, and passes that to the extraction logic. 
 
 **Income extraction**
 
-The tool searches for income-specific field labels in priority order: Adjusted Gross Income, Gross Income, Total Income, Annual Income, Yearly Income, Net Income, Employment Income, and Taxable Income. When a label is found, it checks the 80 characters immediately after it for a dollar amount. The first confident match wins.
+The tool searches for income-specific field labels in priority order: 
+- Adjusted Gross Income
+- Gross Income
+- Total Income
+- Annual Income
+- Yearly Income
+- Net Income
+- Employment Income
+- Taxable Income. 
+When a label is found, it checks the 80 characters immediately after it for a dollar amount.
 
-Generic income, revenue, and profit terms (income tax, income limit, gross receipts, net profit, business revenue) are intentionally excluded so ambiguous financial documents fall through to Unable to Determine rather than returning a potentially wrong value.
+Generic income, revenue, and profit terms (income tax, income limit, gross receipts, net profit, business revenue) are excluded so ambiguous financial documents fall through to Unable to Determine rather than returning a potentially wrong value.
 
 **Decision**
 
@@ -32,7 +41,7 @@ Generic income, revenue, and profit terms (income tax, income limit, gross recei
 
 **Input validation**
 
-The tool checks that a file is selected, is under 10 MB, has PDF file metadata when the browser provides it, and starts with the `%PDF-` magic bytes. Extracted text is written via `textContent` rather than `innerHTML` so content from a malicious PDF cannot inject markup.
+The tool checks that a file is selected, is under 10 MB, has a PDF MIME type, and starts with the `%PDF-` magic bytes. Extracted text is written via `textContent` rather than `innerHTML` so content from a malicious PDF cannot inject markup.
 
 ## Assumptions
 
